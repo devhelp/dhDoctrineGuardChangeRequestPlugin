@@ -13,12 +13,6 @@ Installation
     ./symfony c
 
 
-Usage
------
-
-    sample text
-
-
 !mandatory in order to change password!
 
 add this method to sfGuardUser
