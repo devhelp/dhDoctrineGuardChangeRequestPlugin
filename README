@@ -1,0 +1,8 @@
+!mandatory in order to change password!
+
+add this method in sfGuardUser
+
+public function setHashedPassword($hashed_password)
+{
+    $this->_set('password', $hashed_password);
+}
