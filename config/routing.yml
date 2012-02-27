@@ -1,0 +1,31 @@
+#change confirmation
+
+dh_confirm_email_change:
+  url:      /confirm-email-change/:token
+  param:    { module: dhConfirmChange, action: confirmEmailChange }
+  
+dh_confirm_password_change:
+  url:      /confirm-password-change/:token
+  param:    { module: dhConfirmChange, action: confirmPasswordChange }  
+  
+# change email and password forms  
+  
+dh_change_email:
+  url:      /change-email
+  param:    { module: dhChangeRequest, action: changeEmail }
+  
+dh_change_email_update:
+  url:      /change-email/update
+  param:    { module: dhChangeRequest, action: updateEmail }
+  requirements:
+    sf_method:    [post]
+  
+dh_change_password:
+  url:      /change-password
+  param:    { module: dhChangeRequest, action: changePassword }
+  
+dh_change_password_update:
+  url:      /change-password/update
+  param:    { module: dhChangeRequest, action: updatePassword }
+  requirements:
+    sf_method:    [post]

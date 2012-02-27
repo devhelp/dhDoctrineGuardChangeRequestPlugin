@@ -1,0 +1,67 @@
+
+all:
+  
+  dh_change_request:
+    
+    # nb days change request is valid
+    expires_in:       7
+    
+    algorithm:        sha1
+    # you have to overwrite this option !
+    salt:             'some random salt'
+    
+    mail:
+      changeEmail:
+        from:           noreply@example.com
+        subject:        Email change verification
+        partial:        changeEmailMail
+      changePassword:
+        from:           noreply@example.com
+        subject:        Password change verification
+        partial:        changePasswordMail
+    
+    dhChangeEmailForm:
+      ajax:           false
+    
+    dhChangePasswordForm:
+      ajax:           false
+    
+    updateEmail:
+      message:
+        success:      Verification email has been sent to given email address. Please confirm the change
+        error:        There was an error while validating the form
+      flash_name:
+        success:      notice
+        error:        error
+      redirect:
+        success:      '@dh_change_email'
+        error:        false
+    updatePassword:
+      message:
+        success:      Verification email has been sent to your email address. Please confirm the change
+        error:        There was an error while validating the form
+      flash_name:
+        success:      notice
+        error:        error
+      redirect:
+        success:      '@dh_change_password'
+        error:        false
+    confirmEmailChange:
+      message:
+        success:        Your email has been changed successfully        
+        error:          There is no request matching that link
+        token_expired:  Link has expired
+      redirect:
+        success:        false        
+        error:          false
+        token_expired:  false
+    confirmPasswordChange:
+      message:
+        success:        Your password has been changed successfully        
+        error:          There is no request matching that link
+        token_expired:  Link has expired
+      redirect:
+        success:        false        
+        error:          false
+        token_expired:  false
+      

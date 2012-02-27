@@ -1,0 +1,15 @@
+dhChangeRequest:
+  columns:
+    #serialized field value
+    new_value:        { type: string(255), notnull: true }
+    field_name:       { type: string(255), notnull: true }
+    token:            { type: string(128), notnull: true, unique: true }
+    token_expire:     { type: timestamp }
+    user_id:          { type: integer, notnull: true }
+  relations:
+    User:
+      class:          sfGuardUser
+      local:          user_id
+      onDelete:       CASCADE
+      foreignAlias:   ChangeRequests
+    
