@@ -9,9 +9,9 @@ Installation
     $this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');
 5. enable modules you want to use in settings.yml
 
-all:
-  .settings:
-    enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]
+    all:
+      .settings:
+        enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]
 
 6. clear cache
 
@@ -31,11 +31,6 @@ Features
 
 Usage
 ----------
-
-    require 'github/markup'
-    GitHub::Markup.render('README.markdown', "* One\n* Two")
-
-Or, more realistically:
 Plugin configuration let you use it straightforwad after the installation with minimum effort from your side.
 
 Default plugin's app.yml allows you to configure majority of aspects related with the plugin
