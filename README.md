@@ -6,17 +6,17 @@ Installation
 3. copy the directory to plugins folder in your Symfony project
 4. Update setup() method in ProjectConfiguration class with the line below
 
-<pre><code>$this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');</code></pre>
+    <pre><code>$this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');</code></pre>
 
 5. enable modules you want to use in settings.yml
 
-<pre>
-<code>
+    <pre>
+    <code>
     all:
       .settings:
         enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]
-</code>
-</pre>
+    </code>
+    </pre>
 
 6. clear cache
 
