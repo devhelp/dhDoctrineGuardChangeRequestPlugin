@@ -31,6 +31,11 @@ Features
 
 Usage
 ----------
+
+    require 'github/markup'
+    GitHub::Markup.render('README.markdown', "* One\n* Two")
+
+Or, more realistically:
 Plugin configuration let you use it straightforwad after the installation with minimum effort from your side.
 
 Default plugin's app.yml allows you to configure majority of aspects related with the plugin
