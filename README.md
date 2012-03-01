@@ -6,7 +6,8 @@ Installation
 3. copy the directory to plugins folder in your Symfony project
 4. Update setup() method in ProjectConfiguration class with the line below
 
-    $this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');
+<pre><code>$this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');</code></pre>
+
 5. enable modules you want to use in settings.yml
 
 <pre>
@@ -19,7 +20,7 @@ Installation
 
 6. clear cache
 
-    php symfony c
+    <pre><code>php symfony c</code></pre>
 
 Requirements
 ---------------
