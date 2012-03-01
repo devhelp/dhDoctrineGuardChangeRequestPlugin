@@ -9,11 +9,13 @@ Installation
     $this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');
 5. enable modules you want to use in settings.yml
 
-<blockquote>
+<pre>
+<code>
     all:
       .settings:
-        enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]'
-</blockquote>
+        enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]
+</code>
+</pre>
 
 6. clear cache
 
