@@ -7,17 +7,35 @@ Installation
 4. Update setup() method in ProjectConfiguration class with the line below
 
     $this->enablePlugins('dhDoctrineGuardChangeRequestPlugin');
+5. enable modules you want to use in settings.yml
 
-5. clear cache
+all:
+  .settings:
+    enabled_modules: [ default, dhChangeRequest, dhConfirmChange ]
 
-    ./symfony c
+6. clear cache
 
+    php symfony c
 
-!mandatory in order to change password!
+Requirements
+---------------
+Plugin requires sfDoctrineGuardPlugin in order to work
 
-add this method to sfGuardUser
+Features
+----------------
+- after changing email address email is sent to user's new email address with unique url to confirm the change 
+- after changing password email is sent to user's email address with unique url to confirm the change
+- each url has expiration date so it won't be valid forever
+- highly configureable
+- (almost) straighforward ajax support for plugin's forms
 
-public function setHashedPassword($hashed_password)
-{
-    $this->_set('password', $hashed_password);
-}
+Usage
+----------
+Plugin configuration let you use it straightforwad after the installation with minimum effort from your side.
+
+Default plugin's app.yml allows you to configure majority of aspects related with the plugin
+so that you will rarely have to overwrite its actions to match your needs (if at all!)
+
+You have to configure Symfony mailer for sending emails with change confirmations
+
+Check app.yml file in config directory for information about supported configuration

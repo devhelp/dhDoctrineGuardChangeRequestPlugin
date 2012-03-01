@@ -3,22 +3,37 @@ all:
   
   dh_change_request:
     
-    # nb days change request is valid
+    # nb of days the change request is valid
     expires_in:       7
     
     algorithm:        sha1
     # you have to overwrite this option !
     salt:             'some random salt'
     
+    # settings passed to the mailer to compose a message
+    # settings helps you to define from address, subject and body
+    # of sent emails
     mail:
       changeEmail:
         from:           noreply@example.com
         subject:        Email change verification
         partial:        changeEmailMail
+        content_type:   text/plain
       changePassword:
         from:           noreply@example.com
         subject:        Password change verification
         partial:        changePasswordMail
+        content_type:   text/plain
+    
+    # if you want your forms to be submited via ajax set this option
+    # to 'true'. You will need to do few simple steps however, before
+    # this will work
+    # - add jQuery to your scripts (http://jquery.com)    
+    # - add jQuery form plugin to you scripts (http://jquery.malsup.com/form/)
+    # - run symfony task: php symfony plugin:publish-assets dhDoctrineGuardChangeRequestPlugin
+    # from now on, every form that is an instance of dhChangeEmailForm or dhChangePasswordForm
+    # (depending which option you set to true) used by plugin's actions will be handled
+    # via ajax. Simple - isn't ?
     
     dhChangeEmailForm:
       ajax:           false
@@ -26,6 +41,9 @@ all:
     dhChangePasswordForm:
       ajax:           false
     
+    # settings below (for each plugin's action) will help you to minimize the need
+    # of overwriting actions to do simple substitiution such as redirecting 
+    # or setting flash messages. Check action code to know which result occurs when
     updateEmail:
       message:
         success:      Verification email has been sent to given email address. Please confirm the change

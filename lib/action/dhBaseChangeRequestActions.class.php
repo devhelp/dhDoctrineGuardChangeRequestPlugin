@@ -102,7 +102,7 @@ class dhBaseChangeRequestActions extends dhBaseActions
                 ->setFrom($config['from'])
                 ->setTo($to)
                 ->setSubject($config['subject'])
-                ->setBody($this->getPartial($config['partial'], array('change_request' => $change_request)));
+                ->setBody($this->getPartial($config['partial'], array('change_request' => $change_request)), $config['content_type']);
         
         return $this->getMailer()->send($message);
     }

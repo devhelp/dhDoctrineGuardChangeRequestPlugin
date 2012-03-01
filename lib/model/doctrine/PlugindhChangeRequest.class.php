@@ -13,13 +13,13 @@
 abstract class PlugindhChangeRequest extends BasedhChangeRequest
 {
 
-    const FIELD_NAME_PASSWORD = 'hashed_password';
+    const FIELD_NAME_PASSWORD = 'password_hash';
     const FIELD_NAME_EMAIL = 'email_address';
 
-    public function setHashedPassword($password)
+    public function setPasswordHash($password)
     {
         $this->setFieldName(self::FIELD_NAME_PASSWORD);
-        $this->setNewValue($this->getHashedPassword($password));
+        $this->setNewValue($this->getPasswordHash($password));
     }
 
     public function setEmailAddress($email_address)
@@ -28,7 +28,7 @@ abstract class PlugindhChangeRequest extends BasedhChangeRequest
         $this->setNewValue($email_address);
     }
 
-    protected function getHashedPassword($password)
+    protected function getPasswordHash($password)
     {
         if(!$this->getUserId() || $this->getUser()->isNew())
             throw new Exception('You have to set an existing User before generating a password');
