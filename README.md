@@ -1,3 +1,7 @@
+Credits
+------------
+Plugin brought to you by : Devhelp.pl ( http://devhelp.pl )
+
 Installation
 ------------
 
